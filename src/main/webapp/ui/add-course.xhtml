@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Add Course</title>
+</h:head>
+
+<h:body>
+    <!-- Header -->
+    <ui:include src="/fragments/header.xhtml"/>
+    <br/> <!-- Line break for spacing -->
+    <div class="d-flex flex-column min-vh-100">
+    <div class="container mt-4">
+    <h1>Add New Course</h1>
+
+    <h:form>
+        <h:panelGrid columns="2" styleClass="mb-4">
+            <h:outputLabel for="courseName" value="Course Name:" />
+            <h:inputText id="courseName" value="#{courseBean.course.courseName}" required="true" requiredMessage="Course name is required."
+                         styleClass="form-control"/>
+
+            <h:outputLabel for="description" value="Description:" />
+            <h:inputText id="description" value="#{courseBean.course.description}" requiredMessage="Description is required."
+                         styleClass="form-control"/>
+
+            <h:outputLabel for="teacherId" value="Assign Teacher:" />
+            <h:selectOneMenu id="teacherId" value="#{courseBean.selectedTeacherId}" required="true" styleClass="form-select">
+                <f:selectItem itemLabel="Select a Teacher" itemValue="" noSelectionOption="true"/>
+                <f:selectItems value="#{courseBean.teachers}" var="teacher" itemValue="#{teacher.teacherId}" itemLabel="#{teacher.teacherName}"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel />
+            <h:commandButton value="Save" action="#{courseBean.saveCourse}" styleClass="btn btn-success"/>
+        </h:panelGrid>
+
+        <!-- Optional message if the new course is saved successfully -->
+        <h:messages globalOnly="true" />
+        <!-- Link back to the home page -->
+        <h:link value="Back to Home" outcome="index.xhtml" styleClass="btn btn-primary"/>
+    </h:form>
+    </div>
+    </div>
+    <!-- Link back to the home page -->
+<!-- <h:link value="Back to Home" outcome="index.xhtml" styleClass="btn btn-primary"/>-->
+
+    <br/> <!-- Line break for spacing -->
+    <br/> <!-- Line break for spacing -->
+    <!-- Footer -->
+    <ui:include src="/fragments/footer.xhtml"/>
+</h:body>
+</html>

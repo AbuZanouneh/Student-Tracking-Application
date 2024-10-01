@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Student Courses</title>
+</h:head>
+<h:body>
+    <!-- Header -->
+    <ui:include src="/fragments/header.xhtml"/>
+    <br/> <!-- Line break for spacing -->
+    <div class="container mt-4">
+        <h1>Student Name: #{studentBean.selectedStudent.firstName} #{studentBean.selectedStudent.lastName}</h1>
+    <h2>Registered Courses: #{studentBean.registeredCoursesCount}</h2>
+        <h:form>
+    <h:dataTable value="#{studentBean.studentCourses}" var="course" styleClass="table table-bordered">
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Course ID</span></f:facet>
+            #{course.courseId}
+        </h:column>
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Course Name</span></f:facet>
+            #{course.courseName}
+        </h:column>
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Description</span></f:facet>
+            #{course.description}
+        </h:column>
+        <!-- Delete a course -->
+        <h:column>
+            <f:facet name="header">Actions</f:facet>
+            <h:commandLink action="#{studentBean.deleteCourseRegistration(course.courseId)}" value="Delete" styleClass="btn btn-danger">
+                <f:ajax execute="@this" render="@form" /> </h:commandLink>
+        </h:column>
+
+    </h:dataTable>
+        </h:form>
+        <br/> <!-- Line break for spacing -->
+        <hr></hr>
+        <h3>Course Registration:</h3>
+
+    <div class="container mt-4">
+    <h:form>
+        <h:selectOneMenu value="#{studentBean.selectedCourseId}"   styleClass="form-control">
+            <f:selectItems value="#{courseBean.availableCourses}" var="course"
+                           itemValue="#{course.courseId}" itemLabel="#{course.courseName}" />
+        </h:selectOneMenu>
+        <br/> <!-- Line break for spacing -->
+        <h:commandButton value="Register for Course" action="#{studentBean.registerForCourse()}"
+                         disabled="#{studentBean.registeredCoursesCount ge 7}" styleClass="btn btn-success"/>
+        <h:commandButton value="Back to Students" action="students?faces-redirect=true" styleClass="btn btn-primary"  style="margin-left: 20px;"/>
+    </h:form>
+    </div>
+    <h:messages globalOnly="true" />
+    </div>
+    <br/> <!-- Line break for spacing -->
+    <br/> <!-- Line break for spacing -->
+    <!-- Footer -->
+    <ui:include src="/fragments/footer.xhtml"/>
+</h:body>
+</html>
+

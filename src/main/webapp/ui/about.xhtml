@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>About Us</title>
+</h:head>
+<h:body>
+    <!-- Header -->
+    <ui:include src="/fragments/header.xhtml"/>
+
+    <div class="container mt-5">
+        <h1>About Us</h1>
+        <hr></hr>
+        <br/> <!-- Line break for spacing -->
+
+        <p class="lead">
+            Welcome to our Student Tracking System! Our platform is designed to provide an efficient way to manage and monitor student progress, attendance, and performance.
+        </p>
+        <p>
+            With years of experience in educational technology, our team is dedicated to delivering innovative solutions that help institutions, educators, and students achieve their goals.
+        </p>
+        <p>
+            Thank you for choosing our system. If you have any questions or need assistance, feel free to reach out to us.
+        </p>
+        <br/> <!-- Line break for spacing -->
+        <br/> <!-- Line break for spacing -->
+        <h:form>
+        <h:commandButton value="Back" action="home.xhtml?faces-redirect=true" styleClass="btn btn-primary" /></h:form>
+    </div>
+
+    <!-- Footer -->
+    <ui:include src="/fragments/footer.xhtml"/>
+</h:body>
+</html>

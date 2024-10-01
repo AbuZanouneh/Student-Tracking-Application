@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+    <!-- Header -->
+    <ui:include src="/fragments/header.xhtml"/>
+    <br/> <!-- Line break for spacing -->
+    <div class="d-flex flex-column min-vh-100">
+    <div class="container mt-4">
+    <h1>Manage Users</h1>
+
+    <h:form>
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="username" value="Username:" />
+            <h:inputText id="username" value="#{userBean.username}" required="true"  styleClass="form-control"/>
+
+            <h:outputLabel for="role" value="Role:" />
+            <h:selectOneMenu id="role" value="#{userBean.selectedRoleId}" required="true"  styleClass="form-control">
+                <f:selectItems value="#{userBean.roles}" var="role" itemValue="#{role.id}" itemLabel="#{role.roleName}" />
+            </h:selectOneMenu>
+        </h:panelGrid>
+        <br/> <!-- Line break for spacing -->
+        <h:commandButton value="Add User" action="#{userBean.addUser}" styleClass="btn btn-success" />
+    </h:form>
+        <br/> <!-- Line break for spacing -->
+        <hr></hr>
+
+    <h2>Existing Users</h2>
+        <h:form>
+    <h:dataTable value="#{userBean.users}" var="user" styleClass="table table-bordered"  >
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Username</span></f:facet>
+            <h:outputText value="#{user.username}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Role</span></f:facet>
+            <h:outputText value="#{user.role.roleName}" />
+        </h:column>
+
+        <!--  To see the plain password without encoding -->
+<!--        <h:column>-->
+<!--            <f:facet name="header"><span class="fw-bold">Password</span></f:facet>-->
+<!--            <h:outputText value="#{user.password}" /> &lt;!&ndash; Displays the temporary random password &ndash;&gt;-->
+<!--        </h:column>-->
+
+        <!-- New column for Delete button -->
+        <h:column>
+            <f:facet name="header"><span class="fw-bold">Actions</span></f:facet>
+            <h:commandButton value="Delete" action="#{userBean.deleteUser(user)}" styleClass="btn btn-danger" />
+        </h:column>
+    </h:dataTable></h:form>
+        <!-- Link back to the home page -->
+        <h:link value="Back to Home" outcome="index.xhtml" styleClass="btn btn-primary"/>
+    </div></div>
+    <br/> <!-- Line break for spacing -->
+    <br/> <!-- Line break for spacing -->
+    <!-- Footer -->
+    <ui:include src="/fragments/footer.xhtml"/>
+</h:body>
+</html>
