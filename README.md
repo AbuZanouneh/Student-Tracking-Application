@@ -10,16 +10,27 @@ Before you begin, ensure you have met the following requirements:
 * Database Server (e.g., MySQL) (if not using H2)
 * Postman (optional, for API testing)
 
-## Database Setup
-
+# Database Setup
 To set up the database, you must first create it using the provided SQL file:
 
 1. Locate the `student_tracker_db.sql` file in the project folder.
 2. Run the SQL script in your database management system to create the necessary tables and data.
 
-## Accessing the Application
+# Getting Started
 
-Add or replace the following lines in the src/main/resources/application.properties file with your MySQL credentials:
+1. Clone the Repository
+   If you haven't cloned the repository yet, open your terminal and run:
+   
+   ``` bash
+       git clone https://github.com/AbuZanouneh/Student-Tracking-Application.git
+
+
+2. Navigate to the Project Directory
+
+   ``` bash
+       git clone https://github.com/AbuZanouneh/Student-Tracking-Application.git
+   
+3. Add or replace the following lines in the src/main/resources/application.properties file with your MySQL credentials:
 
     ``` java
         # MySQL Database Configuration
@@ -30,9 +41,11 @@ Add or replace the following lines in the src/main/resources/application.propert
         # spring.jpa.hibernate.ddl-auto=update
         spring.jpa.show-sql=true
 
+4. Running the Application
+   
 You can access it at the following -- URL: http://localhost:8080/ui/home.xhtml
 
-## Login Credentials
+5. Login Credentials
 
 To access the system, use the following credentials:
 
