@@ -49,8 +49,8 @@ You can access it at the following -- URL: http://localhost:8080/ui/home.xhtml
 
 To access the system, use the following credentials:
 
-- **Username:** admin
-- **Password:** admin123
+- ** Username: admin ** 
+- ** Password: admin123 ** 
 
 # Technologies Used
   * Backend:
@@ -62,6 +62,7 @@ To access the system, use the following credentials:
      * MySQL (Optional)
   * Frontend:
      * JavaServer Faces (JSF)
+     * Bootstrap 
   * Others:
      * Git (Optional)
      * Postman (Optional)
