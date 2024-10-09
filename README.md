@@ -10,8 +10,18 @@ To set up the database, you must first create it using the provided SQL file:
 
 ## Accessing the Application
 
-After setting up the database and starting the application, you can access it at the following URL:
-http://localhost:8080/ui/home.xhtml
+Add or replace the following lines in the src/main/resources/application.properties file with your MySQL credentials:
+
+    ``` java
+        # MySQL Database Configuration
+        spring.application.name=employee-management
+        spring.datasource.url=jdbc:mysql://localhost:3306/student_tracker?useSSL=false&serverTimezone=UTC
+        spring.datasource.username=your_mysql_username
+        spring.datasource.password=your_mysql_password
+        # spring.jpa.hibernate.ddl-auto=update
+        spring.jpa.show-sql=true
+
+You can access it at the following -- URL: http://localhost:8080/ui/home.xhtml
 
 ## Login Credentials
 
