@@ -4,12 +4,11 @@ This is a demo project to learn how to integrate Spring Boot with JavaServer Fac
 # Prerequisites
 Before you begin, ensure you have met the following requirements:
 
--- Java Development Kit (JDK) 8 or higher
--- Apache Maven (for building the Spring Boot project)
--- Git (optional, for cloning the repository)
--- JavaServer Faces (JSF) Setup (configured in your IDE)
--- Database Server (e.g., MySQL) (if not using H2)
--- Postman (optional, for API testing)
+* Java Development Kit (JDK) 8 or higher
+* Apache Maven (for building the Spring Boot project)
+* JavaServer Faces (JSF) Setup (configured in your IDE)
+* Database Server (e.g., MySQL) (if not using H2)
+* Postman (optional, for API testing)
 
 ## Database Setup
 
