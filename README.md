@@ -1,6 +1,16 @@
 # Student-Tracking-Application
 This is a demo project to learn how to integrate Spring Boot with JavaServer Faces (JSF). It shows how these two technologies can work together in a web application.
 
+# Prerequisites
+Before you begin, ensure you have met the following requirements:
+
+-- Java Development Kit (JDK) 8 or higher
+-- Apache Maven (for building the Spring Boot project)
+-- Git (optional, for cloning the repository)
+-- JavaServer Faces (JSF) Setup (configured in your IDE)
+-- Database Server (e.g., MySQL) (if not using H2)
+-- Postman (optional, for API testing)
+
 ## Database Setup
 
 To set up the database, you must first create it using the provided SQL file:
