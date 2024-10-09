@@ -22,13 +22,13 @@ To set up the database, you must first create it using the provided SQL file:
    If you haven't cloned the repository yet, open your terminal and run:
    
    ``` bash
-       git clone https://github.com/AbuZanouneh/Student-Tracking-Application.git
+       git clone https://github.com/AbuZanouneh/student-tracking-app-springboot-jsf.git
 
 
 2. Navigate to the Project Directory
 
    ``` bash
-       git clone https://github.com/AbuZanouneh/Student-Tracking-Application.git
+       git clone https://github.com/AbuZanouneh/student-tracking-app-springboot-jsf.git
    
 3. Add or replace the following lines in the src/main/resources/application.properties file with your MySQL credentials:
 
