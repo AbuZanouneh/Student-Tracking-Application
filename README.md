@@ -52,4 +52,18 @@ To access the system, use the following credentials:
 - **Username:** admin
 - **Password:** admin123
 
-Feel free to explore the application!
+# Technologies Used
+  * Backend:
+     * Spring Boot
+     * Spring Data JPA
+     * Spring Security
+     * Maven
+     * JavaServer Faces (JSF)
+     * MySQL (Optional)
+  * Frontend:
+     * JavaServer Faces (JSF)
+  * Others:
+     * Git (Optional)
+     * Postman (Optional)
+
+## Feel free to explore the application!
